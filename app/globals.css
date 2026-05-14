@@ -173,3 +173,37 @@
   z-index: 10 !important;
   background: white;
 }
+
+/* Fix for comparison table sticky columns - nested tables */
+.overflow-x-auto {
+  position: relative;
+}
+
+.overflow-x-auto table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.overflow-x-auto table thead th:first-child,
+.overflow-x-auto table tbody td:first-child {
+  position: sticky;
+  left: 0;
+  z-index: 12;
+  background-color: white;
+  box-shadow: 2px 0 4px -2px rgba(0, 0, 0, 0.05);
+}
+
+.overflow-x-auto table thead th:first-child {
+  background-color: rgb(249, 250, 251);
+  z-index: 13;
+}
+
+.overflow-x-auto table tbody tr:hover td:first-child {
+  background-color: rgb(249, 250, 251);
+}
+
+/* Ensure Collapse headers stay above tables */
+.ant-collapse-header {
+  position: relative;
+  z-index: 11;
+}

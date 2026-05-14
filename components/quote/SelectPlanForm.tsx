@@ -310,7 +310,7 @@ export default function SelectPlanForm({ onContinue, onBack }: SelectPlanFormPro
     <>
       {data.map((row, idx) => (
         <tr key={idx} className="border-b border-gray-100 hover:bg-gray-50">
-          <td className="p-3 text-gray-700 sticky left-0 bg-white w-[200px] min-w-[200px] max-w-[200px]">{row.label}</td>
+          <td className="p-3 text-gray-700 sticky left-0 bg-white w-[200px] min-w-[200px] max-w-[200px]" style={{ zIndex: 10 }}>{row.label}</td>
           {row.values.map((value, i) => (
             <td
               key={i}
@@ -331,8 +331,8 @@ export default function SelectPlanForm({ onContinue, onBack }: SelectPlanFormPro
   );
 
   const renderComparisonTable = () => (
-    <div className="overflow-x-auto">
-      <table className="w-full border-collapse text-sm table-fixed">
+    <div className="overflow-x-auto border border-gray-200 rounded-lg">
+      <table className="w-full border-collapse text-sm table-fixed" style={{ tableLayout: 'fixed' }}>
         <colgroup>
           <col className="w-[200px] min-w-[200px]" />
           {standardPlans.map((plan) => (
@@ -342,7 +342,7 @@ export default function SelectPlanForm({ onContinue, onBack }: SelectPlanFormPro
         <thead>
           {/* Merged Group Headers */}
           <tr className="border-b border-gray-200">
-            <th className="text-left p-3 bg-gray-50 font-semibold text-gray-700 sticky left-0" rowSpan={2}>
+            <th className="text-left p-3 bg-gray-50 font-semibold text-gray-700 sticky left-0" rowSpan={2} style={{ zIndex: 12 }}>
               Coverage Details
             </th>
             <th className="p-3 bg-gray-100 text-center font-bold text-gray-700" colSpan={2}>
@@ -373,7 +373,7 @@ export default function SelectPlanForm({ onContinue, onBack }: SelectPlanFormPro
           </tr>
           {/* Premium Row - Top */}
           <tr className="border-b border-gray-200 bg-[#0a3d62]">
-            <td className="p-3 font-semibold text-white sticky left-0 bg-[#0a3d62]">
+            <td className="p-3 font-semibold text-white sticky left-0 bg-[#0a3d62]" style={{ zIndex: 11 }}>
               Annual Premium
             </td>
             {standardPlans.map((plan) => (
@@ -387,7 +387,7 @@ export default function SelectPlanForm({ onContinue, onBack }: SelectPlanFormPro
           </tr>
           {/* Add to Quotation Row */}
           <tr className="border-b border-gray-200 bg-gray-50">
-            <td className="p-3 font-medium text-gray-600 sticky left-0 bg-gray-50">
+            <td className="p-3 font-medium text-gray-600 sticky left-0 bg-gray-50" style={{ zIndex: 11 }}>
               Add to Quotation
             </td>
             {standardPlans.map((plan) => (
@@ -401,7 +401,7 @@ export default function SelectPlanForm({ onContinue, onBack }: SelectPlanFormPro
           </tr>
           {/* Geographical Coverage Row */}
           <tr className="border-b border-gray-200">
-            <td className="p-3 bg-gray-50 font-medium text-gray-600 sticky left-0">
+            <td className="p-3 bg-gray-50 font-medium text-gray-600 sticky left-0" style={{ zIndex: 11 }}>
               Geographical Coverage
             </td>
             {standardPlans.map((plan) => (
@@ -463,7 +463,7 @@ export default function SelectPlanForm({ onContinue, onBack }: SelectPlanFormPro
                         <tbody>
                           {/* Individual Annual Deductible - Dropdown */}
                           <tr className="border-b border-gray-100 hover:bg-gray-50">
-                            <td className="p-3 text-gray-700 sticky left-0 bg-white w-[200px] min-w-[200px] max-w-[200px]">
+                            <td className="p-3 text-gray-700 sticky left-0 bg-white w-[200px] min-w-[200px] max-w-[200px]" style={{ zIndex: 10 }}>
                               Individual Annual Deductible
                             </td>
                             {standardPlans.map((plan) => (
@@ -484,7 +484,7 @@ export default function SelectPlanForm({ onContinue, onBack }: SelectPlanFormPro
                           </tr>
                           {/* Family Annual Deductible - calculated based on individual */}
                           <tr className="border-b border-gray-100 hover:bg-gray-50">
-                            <td className="p-3 text-gray-700 sticky left-0 bg-white w-[200px] min-w-[200px] max-w-[200px]">
+                            <td className="p-3 text-gray-700 sticky left-0 bg-white w-[200px] min-w-[200px] max-w-[200px]" style={{ zIndex: 10 }}>
                               Family Annual Deductible
                             </td>
                             {standardPlans.map((plan) => {
@@ -502,7 +502,7 @@ export default function SelectPlanForm({ onContinue, onBack }: SelectPlanFormPro
                           </tr>
                           {/* Policy Co-payment - static values */}
                           <tr className="border-b border-gray-100 hover:bg-gray-50">
-                            <td className="p-3 text-gray-700 sticky left-0 bg-white w-[200px] min-w-[200px] max-w-[200px]">
+                            <td className="p-3 text-gray-700 sticky left-0 bg-white w-[200px] min-w-[200px] max-w-[200px]" style={{ zIndex: 10 }}>
                               Policy Co-payment
                             </td>
                             {["20%", "20%", "10%", "10%", "0%", "30%", "25%", "20%", "10%"].map((value, i) => (
@@ -546,7 +546,7 @@ export default function SelectPlanForm({ onContinue, onBack }: SelectPlanFormPro
                         </colgroup>
                         <tbody>
                           <tr className="border-b border-gray-100 hover:bg-gray-50">
-                            <td className="p-3 text-gray-700 sticky left-0 bg-white w-[200px] min-w-[200px] max-w-[200px]">
+                            <td className="p-3 text-gray-700 sticky left-0 bg-white w-[200px] min-w-[200px] max-w-[200px]" style={{ zIndex: 10 }}>
                               <div className="flex items-center gap-3">
                                 <Switch
                                   size="small"
