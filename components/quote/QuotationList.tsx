@@ -99,6 +99,8 @@ export default function QuotationList({ onCreateNew }: QuotationListProps) {
       title: "Quotation No.",
       dataIndex: "quotationNumber",
       key: "quotationNumber",
+      fixed: "left",
+      width: 140,
       render: (text: string) => (
         <span className="font-medium text-[#0a3d62]">{text}</span>
       ),
@@ -107,6 +109,7 @@ export default function QuotationList({ onCreateNew }: QuotationListProps) {
       title: "Policyholder",
       dataIndex: "policyholderName",
       key: "policyholderName",
+      width: 200,
       render: (text: string, record: Quotation) => (
         <div>
           <div className="font-medium">{text}</div>
@@ -120,6 +123,7 @@ export default function QuotationList({ onCreateNew }: QuotationListProps) {
       title: "Plans",
       dataIndex: "plans",
       key: "plans",
+      width: 250,
       render: (plans: string[]) => (
         <div className="flex flex-wrap gap-1">
           {plans.map((plan, index) => (
@@ -134,6 +138,7 @@ export default function QuotationList({ onCreateNew }: QuotationListProps) {
       title: "Premium",
       dataIndex: "totalPremium",
       key: "totalPremium",
+      width: 130,
       render: (premium: number) => (
         <span className="font-semibold text-[#0a3d62]">
           ${premium.toLocaleString()}/yr
@@ -144,6 +149,7 @@ export default function QuotationList({ onCreateNew }: QuotationListProps) {
       title: "Status",
       dataIndex: "status",
       key: "status",
+      width: 110,
       render: (status: string) => (
         <Tag color={statusColors[status]}>
           {status.charAt(0).toUpperCase() + status.slice(1)}
@@ -154,6 +160,7 @@ export default function QuotationList({ onCreateNew }: QuotationListProps) {
       title: "Created",
       dataIndex: "createdAt",
       key: "createdAt",
+      width: 110,
       render: (date: string) => (
         <span className="text-gray-600">{date}</span>
       ),
@@ -161,6 +168,8 @@ export default function QuotationList({ onCreateNew }: QuotationListProps) {
     {
       title: "Actions",
       key: "actions",
+      fixed: "right",
+      width: 130,
       render: (_: unknown, record: Quotation) => (
         <Space size="small">
           <Button

@@ -123,3 +123,53 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Ant Design Table Fixed Columns Fix */
+.quotation-table .ant-table {
+  width: 100%;
+}
+
+.quotation-table .ant-table-wrapper {
+  overflow: auto;
+}
+
+.quotation-table .ant-table-container {
+  position: relative;
+}
+
+.quotation-table .ant-table-cell-fix-left::after {
+  position: absolute;
+  top: 0;
+  right: -1px;
+  bottom: -1px;
+  width: 30px;
+  transform: translateX(100%);
+  background: linear-gradient(to left, rgba(0, 0, 0, 0.15), transparent);
+  transition: box-shadow 0.3s;
+  pointer-events: none;
+  content: '';
+}
+
+.quotation-table .ant-table-cell-fix-right::before {
+  position: absolute;
+  top: 0;
+  left: -1px;
+  bottom: -1px;
+  width: 30px;
+  transform: translateX(-100%);
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.15), transparent);
+  transition: box-shadow 0.3s;
+  pointer-events: none;
+  content: '';
+}
+
+.quotation-table .ant-table-cell {
+  position: relative;
+}
+
+.quotation-table .ant-table-cell-fix-left,
+.quotation-table .ant-table-cell-fix-right {
+  position: sticky !important;
+  z-index: 10 !important;
+  background: white;
+}
